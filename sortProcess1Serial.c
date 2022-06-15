@@ -9,16 +9,36 @@
 
 #include "common.h"
 
-int main() {
+static int* array;
+static int size;
+static int* newArray;
 
+int main() {
     // Seteo la semilla del generador de numeros aleatorios
     srand(time(NULL));
 
     // Genero un arreglo de N elementos
     int size = N;
     int* array = arrayNew(size);
+    
 
     // COMPLETAR
+    bubbleSort(array, size/2);
+    bubbleSort(array+(size/2), size/2);
+
+    newArray = (int*)malloc(sizeof(int)*size);
+
+    mergeLimit(array, newArray, size);
+    mergeLimitReverse(array, newArray, size);
+
+    arrayPrint(newArray, size);
+    
+    // Verificar si el arreglo esta ordenado
+    arraySortCheck(newArray, size);
+
+    // Libero memoria
+    free(array);
+    free(newArray);
 
     return 0;
 }
