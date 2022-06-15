@@ -28,7 +28,15 @@ int arraySortCheck(int* array, int size) {
 
 void bubbleSort(int* array, int size) {
 
-    // COMPLETAR
+    for(int j = 0; j < size; j++) {
+       for(int i = 0; i < size-1; i++){ 
+            if(array[i] > array[i+1]){
+                int aux = array[i];
+                array[i] = array[i+1];
+                array[i+1] = aux;
+            }
+        }
+    }
 
 }
 
