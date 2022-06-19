@@ -18,11 +18,10 @@ int main() {
     srand(time(NULL));
 
     // Genero un arreglo de N elementos
-    int size = N;
-    int* array = arrayNew(size);
+    size = N;
+    array = arrayNew(size);
     
 
-    // COMPLETAR
     bubbleSort(array, size/2);
     bubbleSort(array+(size/2), size/2);
 
